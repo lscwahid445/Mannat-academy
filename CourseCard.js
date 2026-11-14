@@ -1,0 +1,38 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Clock, Calendar, ArrowRight, CheckCircle2 } from 'lucide-react';
+export default function CourseCard({ course, enrollmentStatus }) {
+    return (React.createElement("div", { className: "bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl hover:border-leaf-400 transition-all duration-300 flex flex-col group" },
+        React.createElement("div", { className: "relative h-48 overflow-hidden bg-slate-100" },
+            React.createElement("img", { src: course.thumbnail, alt: course.title, className: "w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" }),
+            React.createElement("div", { className: "absolute top-3 left-3 flex gap-2" },
+                React.createElement("span", { className: "px-3 py-1 rounded-full text-xs font-bold bg-white/95 text-slate-800 shadow-sm" }, course.batch),
+                course.isFree ? (React.createElement("span", { className: "px-3 py-1 rounded-full text-xs font-bold bg-leaf-600 text-white shadow-sm" }, "\u09AB\u09CD\u09B0\u09BF \u0995\u09CB\u09B0\u09CD\u09B8")) : (React.createElement("span", { className: "px-3 py-1 rounded-full text-xs font-bold bg-brandOrange-500 text-white shadow-sm" },
+                    "\u09B8\u09BF\u099F \u09AC\u09BE\u0995\u09BF: ",
+                    course.seatsLeft,
+                    "\u099F\u09BF")))),
+        React.createElement("div", { className: "px-4 py-2.5 bg-leaf-50/70 border-b border-leaf-100 flex items-center justify-between text-xs font-semibold text-slate-700" },
+            React.createElement("span", { className: "flex items-center gap-1" },
+                React.createElement(Calendar, { className: "w-3.5 h-3.5 text-leaf-600" }),
+                course.schedule),
+            React.createElement("span", { className: "flex items-center gap-1" },
+                React.createElement(Clock, { className: "w-3.5 h-3.5 text-brandOrange-500" }),
+                course.duration)),
+        React.createElement("div", { className: "p-5 flex-1 flex flex-col" },
+            React.createElement("span", { className: "text-xs font-bold text-leaf-600 mb-1.5" }, course.category),
+            React.createElement("h3", { className: "text-lg font-bold text-slate-900 group-hover:text-leaf-700 transition-colors line-clamp-2 mb-2" }, course.title),
+            React.createElement("p", { className: "text-sm text-slate-600 line-clamp-2 mb-4 flex-1" }, course.description),
+            React.createElement("div", { className: "pt-4 border-t border-slate-100 flex items-center justify-between" },
+                React.createElement("div", null, course.isFree ? (React.createElement("span", { className: "text-xl font-extrabold text-leaf-600" }, "\u09AB\u09CD\u09B0\u09BF")) : (React.createElement("div", { className: "flex items-baseline gap-2" },
+                    React.createElement("span", { className: "text-xl font-extrabold text-slate-900" },
+                        "\u09F3",
+                        course.price),
+                    course.originalPrice && (React.createElement("span", { className: "text-sm text-slate-400 line-through" },
+                        "\u09F3",
+                        course.originalPrice))))),
+                enrollmentStatus === 'approved' ? (React.createElement(Link, { to: `/classroom/${course.id}`, className: "inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-leaf-600 hover:bg-leaf-700 text-white text-sm font-bold transition-colors" },
+                    React.createElement(CheckCircle2, { className: "w-4 h-4" }),
+                    "\u0995\u09CD\u09B2\u09BE\u09B8 \u0995\u09B0\u09C1\u09A8")) : (React.createElement(Link, { to: `/course/${course.id}`, className: "inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-slate-900 hover:bg-brandOrange-500 text-white text-sm font-bold transition-colors" },
+                    "\u09AC\u09BF\u09B8\u09CD\u09A4\u09BE\u09B0\u09BF\u09A4 \u09A6\u09C7\u0996\u09C1\u09A8",
+                    React.createElement(ArrowRight, { className: "w-4 h-4" })))))));
+}

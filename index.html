@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mannat Academy & Skill Development</title>
+    <meta name="description" content="ভাষা, প্রযুক্তি ও ব্যবসায় দক্ষতা অর্জনের অনলাইন প্ল্যাটফর্ম" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              leaf: { 50: '#f0fdf4', 100: '#dcfce7', 200: '#bbf7d0', 300: '#86efac', 400: '#4ade80', 500: '#22c55e', 600: '#16a34a', 700: '#15803d', 800: '#166534', 900: '#14532d' },
+              brandOrange: { 50: '#fff7ed', 100: '#ffedd5', 200: '#fed7aa', 300: '#fdba74', 400: '#fb923c', 500: '#f97316', 600: '#ea580c', 700: '#c2410c', 800: '#9a3412', 900: '#7c2d12' },
+            },
+            fontFamily: { sans: ['"Hind Siliguri"', '"Noto Sans Bengali"', 'system-ui', 'sans-serif'] },
+          },
+        },
+      };
+    </script>
+
+    <script type="importmap">
+      {
+        "imports": {
+          "react": "https://esm.sh/react@18.3.1",
+          "react-dom": "https://esm.sh/react-dom@18.3.1?external=react",
+          "react-dom/client": "https://esm.sh/react-dom@18.3.1/client?external=react",
+          "react-router-dom": "https://esm.sh/react-router-dom@6.28.0?external=react,react-dom",
+          "lucide-react": "https://esm.sh/lucide-react@0.468.0?external=react"
+        }
+      }
+    </script>
+
+    <style>
+      html { scroll-behavior: smooth; }
+      body { margin: 0; font-family: 'Hind Siliguri', 'Noto Sans Bengali', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
